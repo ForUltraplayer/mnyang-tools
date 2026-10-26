@@ -1,0 +1,22 @@
+{
+  "name": "mnyang-tools",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run --exclude tests/dist.test.ts",
+    "test:dist": "vitest run tests/dist.test.ts"
+  },
+  "dependencies": {
+    "astro": "^7.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "node-html-parser": "^9.0.5",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.5"
+  }
+}
