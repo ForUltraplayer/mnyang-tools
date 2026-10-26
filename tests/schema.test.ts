@@ -19,6 +19,12 @@ test('website만 있어도 받는다', () => {
   const { repo, ...rest } = ok;
   expect(itemSchema.safeParse({ ...rest, website: 'https://vencord.dev/' }).success).toBe(true);
 });
+test('http/https가 아닌 website·download(javascript: 등)를 거부한다', () => {
+  const { repo, ...rest } = ok;
+  expect(itemSchema.safeParse({ ...rest, website: 'javascript:alert(1)' }).success).toBe(false);
+  expect(itemSchema.safeParse({ ...ok, download: 'javascript:alert(1)' }).success).toBe(false);
+  expect(itemSchema.safeParse({ ...ok, download: 'https://vencord.dev/' }).success).toBe(true);
+});
 test('모르는 디바이스, 빈 디바이스 목록, 잘못된 repo 형식을 거부한다', () => {
   expect(itemSchema.safeParse({ ...ok, devices: ['mac'] }).success).toBe(false);
   expect(itemSchema.safeParse({ ...ok, devices: [] }).success).toBe(false);

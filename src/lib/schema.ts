@@ -17,6 +17,9 @@ export const SOURCE_LABELS: Record<Source, string> = {
   external: '외부',
 };
 
+// javascript: 같은 스킴을 막기 위해 http/https만 허용한다.
+const httpUrl = z.url({ protocol: /^https?$/ });
+
 export const itemSchema = z
   .object({
     title: z.string().min(1),
@@ -24,8 +27,8 @@ export const itemSchema = z
     devices: z.array(z.enum(DEVICES)).min(1),
     source: z.enum(SOURCES),
     repo: z.string().regex(/^[\w.-]+\/[\w.-]+$/).optional(),
-    website: z.url().optional(),
-    download: z.url().optional(),
+    website: httpUrl.optional(),
+    download: httpUrl.optional(),
     order: z.number().default(100),
   })
   .refine((d) => d.repo !== undefined || d.website !== undefined, {

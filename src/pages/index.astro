@@ -31,7 +31,7 @@ const tabs = [
   <div id="items">
     {items.map((e) => <ItemCard slug={e.id} data={e.data} />)}
   </div>
-  <p id="empty" hidden>검색 결과가 없습니다</p>
+  <p id="empty" role="status" hidden>검색 결과가 없습니다</p>
   <script>
     import '../scripts/list-filter';
   </script>

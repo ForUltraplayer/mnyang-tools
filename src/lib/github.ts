@@ -29,7 +29,10 @@ export async function fetchLatestRelease(repo: string, opts: ReleaseOptions): Pr
 
   let reason: string;
   try {
-    const response = await doFetch(`https://api.github.com/repos/${repo}/releases/latest`, { headers });
+    const response = await doFetch(`https://api.github.com/repos/${repo}/releases/latest`, {
+      headers,
+      signal: AbortSignal.timeout(10000),
+    });
     if (response.status === 200) {
       const body = (await response.json()) as { tag_name?: unknown };
       if (typeof body.tag_name === 'string' && body.tag_name) {

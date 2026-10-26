@@ -33,6 +33,18 @@ test('토큰이 있으면 Authorization 헤더를 보내고 오류 메시지에�
   expect((err as Error).message).not.toContain('secret123');
   expect(seen[0].get('authorization')).toBe('Bearer secret123');
 });
+test('릴리스 요청에 AbortSignal(타임아웃)을 전달한다', async () => {
+  let signal: unknown;
+  const fetchImpl = async (_u: string, init?: RequestInit) => { signal = init?.signal; return new Response('{}', { status: 404 }); };
+  await fetchLatestRelease('a/b', { ci: true, fetchImpl: fetchImpl as typeof fetch });
+  expect(signal).toBeInstanceOf(AbortSignal);
+});
+test('타임아웃(TimeoutError)은 CI에서 repo와 이유를 담아 던지고 로컬에서는 unknown', async () => {
+  const boom = async () => { throw new DOMException('timed out', 'TimeoutError'); };
+  await expect(fetchLatestRelease('a/b', { ci: true, fetchImpl: boom as typeof fetch })).rejects.toThrow(/a\/b.*TimeoutError/);
+  const warn = vi.fn();
+  expect(await fetchLatestRelease('a/b', { ci: false, warn, fetchImpl: boom as typeof fetch })).toEqual({ status: 'unknown' });
+});
 test('releaseOptionsFromEnv는 CI 값을 해석한다', () => {
   expect(releaseOptionsFromEnv({ CI: 'true', GITHUB_TOKEN: 't' })).toMatchObject({ ci: true, token: 't' });
   expect(releaseOptionsFromEnv({})).toMatchObject({ ci: false });
