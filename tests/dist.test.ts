@@ -50,11 +50,11 @@ test('dist에 HTML 파일이 하나 이상 있다', () => {
   expect(allHtmlFiles().length).toBeGreaterThan(0);
 });
 
-test('목록 화면에 항목 10개와 탭 개수가 맞게 나온다', () => {
+test('목록 화면에 항목 11개와 탭 개수가 맞게 나온다', () => {
   const root = readDist('index.html');
-  expect(root.querySelectorAll('[data-item]')).toHaveLength(10);
+  expect(root.querySelectorAll('[data-item]')).toHaveLength(11);
   const count = (d: string) => root.querySelector(`button.tab[data-device="${d}"] [data-count]`)!.text.trim();
-  expect([count('all'), count('windows'), count('android'), count('web')]).toEqual(['10', '5', '5', '1']);
+  expect([count('all'), count('windows'), count('android'), count('web')]).toEqual(['11', '6', '5', '1']);
 });
 
 test('프로필 배지는 직접 만듦과 수정판 6개에만 붙는다', () => {
@@ -68,7 +68,7 @@ test('검색창과 결과 없음 문구가 있다', () => {
 });
 
 const slugs = ['vencord', 'morphe', 'morphe-patches', 'pc-optimizer', 'notification-filter',
-  'notifications-pro-mnyang', 'spotify-pc', 'spotify-android', 'galaxy-book-enabler', 'shutter-sound-zero'];
+  'notifications-pro-mnyang', 'spotify-pc', 'spotify-android', 'galaxy-book-enabler', 'shutter-sound-zero', 'kakaotalk-adblock'];
 
 test('항목마다 상세 페이지가 있다', () => {
   for (const s of slugs) expect(() => readDist(`items/${s}/index.html`)).not.toThrow();
