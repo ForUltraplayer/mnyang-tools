@@ -45,3 +45,24 @@ test('외부 스크립트와 외부 스타일시트를 불러오지 않는다', 
     for (const l of root.querySelectorAll('link[rel="stylesheet"]')) expect(l.getAttribute('href')).not.toMatch(/^https?:/);
   }
 });
+
+test('dist에 HTML 파일이 하나 이상 있다', () => {
+  expect(allHtmlFiles().length).toBeGreaterThan(0);
+});
+
+test('목록 화면에 항목 10개와 탭 개수가 맞게 나온다', () => {
+  const root = readDist('index.html');
+  expect(root.querySelectorAll('[data-item]')).toHaveLength(10);
+  const count = (d: string) => root.querySelector(`button.tab[data-device="${d}"] [data-count]`)!.text.trim();
+  expect([count('all'), count('windows'), count('android'), count('web')]).toEqual(['10', '5', '5', '1']);
+});
+
+test('프로필 배지는 직접 만듦과 수정판 6개에만 붙는다', () => {
+  expect(readDist('index.html').querySelectorAll('[data-item] .owner-badge')).toHaveLength(6);
+});
+
+test('검색창과 결과 없음 문구가 있다', () => {
+  const root = readDist('index.html');
+  expect(root.querySelector('input#search')).not.toBeNull();
+  expect(root.querySelector('p#empty')?.text).toContain('검색 결과가 없습니다');
+});

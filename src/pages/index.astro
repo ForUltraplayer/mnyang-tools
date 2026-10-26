@@ -1,15 +1,38 @@
 ---
 // @file index.astro
 // @author: ForUltraplayer
-// @brief 임시 첫 페이지
+// @brief 목록 화면: 검색창, 디바이스 탭, 항목 카드 목록
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ItemCard from '../components/ItemCard.astro';
+import { DEVICE_LABELS } from '../lib/devices';
+import { countByDevice, sortItems } from '../lib/filter';
+
+const items = sortItems(
+  (await getCollection('items')).map((e) => ({ ...e, title: e.data.title, order: e.data.order })),
+);
+const counts = countByDevice(items.map((e) => e.data), '');
+const tabs = [
+  { key: 'all', label: '전체' },
+  { key: 'windows', label: DEVICE_LABELS.windows },
+  { key: 'android', label: DEVICE_LABELS.android },
+  { key: 'web', label: DEVICE_LABELS.web },
+] as const;
 ---
-<html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
-    <title>mnyang-tools</title>
-  </head>
-  <body>
-    <h1>mnyang-tools</h1>
-  </body>
-</html>
+<Base title="mnyang-tools" description="직접 만들거나 수정한 도구와 즐겨 쓰는 유틸리티 모음">
+  <input id="search" type="search" placeholder="이름이나 설명으로 검색" aria-label="검색" autocomplete="off" />
+  <div class="tabs" role="group" aria-label="디바이스 필터">
+    {tabs.map((t) => (
+      <button class="tab" type="button" data-device={t.key} aria-pressed={t.key === 'all' ? 'true' : 'false'}>
+        {t.label}<span data-count>{counts[t.key]}</span>
+      </button>
+    ))}
+  </div>
+  <div id="items">
+    {items.map((e) => <ItemCard slug={e.id} data={e.data} />)}
+  </div>
+  <p id="empty" hidden>검색 결과가 없습니다</p>
+  <script>
+    import '../scripts/list-filter';
+  </script>
+</Base>

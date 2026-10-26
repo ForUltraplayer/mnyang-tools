@@ -1,0 +1,7 @@
+---
+// @file OwnerBadge.astro
+// @author: ForUltraplayer
+// @brief 직접 만듦·수정판 항목에 붙는 소유자 프로필 배지
+import { withBase } from '../lib/links';
+---
+<img class="owner-badge" src={withBase('avatar.png')} alt="ForUltraplayer" width="16" height="16" onerror="this.style.display='none'" />

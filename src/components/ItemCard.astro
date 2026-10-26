@@ -1,0 +1,31 @@
+---
+// @file ItemCard.astro
+// @author: ForUltraplayer
+// @brief 목록 화면의 항목 카드(제목, 출처 배지, 요약, 디바이스 칩)
+import OwnerBadge from './OwnerBadge.astro';
+import { withBase } from '../lib/links';
+import { DEVICE_LABELS, isOwned, type ItemData } from '../lib/schema';
+
+interface Props {
+  slug: string;
+  data: ItemData;
+}
+const { slug, data } = Astro.props;
+---
+<a
+  class="card"
+  data-item
+  href={withBase(`items/${slug}/`)}
+  data-devices={data.devices.join(' ')}
+  data-title={data.title}
+  data-summary={data.summary}
+>
+  <h2 class="card-title">
+    <span>{data.title}</span>
+    {isOwned(data.source) && <OwnerBadge />}
+  </h2>
+  <p class="card-summary">{data.summary}</p>
+  <div class="chips">
+    {data.devices.map((d) => <span class="chip">{DEVICE_LABELS[d]}</span>)}
+  </div>
+</a>

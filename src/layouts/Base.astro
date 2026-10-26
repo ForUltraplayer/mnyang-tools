@@ -1,0 +1,37 @@
+---
+// @file Base.astro
+// @author: ForUltraplayer
+// @brief 공통 레이아웃: html 골격, 헤더(프로필·사이트 이름), 전역 스타일
+import '../styles/global.css';
+import { SITE } from '../lib/site';
+import { withBase } from '../lib/links';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="avatar-wrap" href={SITE.profileUrl} aria-label={`${SITE.owner} GitHub 프로필`}>
+          <img class="avatar" src={withBase('avatar.png')} alt="" width="36" height="36" onerror="this.style.display='none'" />
+        </a>
+        <a class="site-name" href={withBase('')}>{SITE.name}</a>
+        <a class="site-owner" href={SITE.profileUrl}>· {SITE.owner}</a>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+  </body>
+</html>
