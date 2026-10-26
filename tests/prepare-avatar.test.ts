@@ -7,7 +7,7 @@ import { afterEach, beforeEach, expect, test } from 'vitest';
 import { mkdtemp, readFile, rm, writeFile, access } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-// @ts-expect-error 타입 선언이 없는 .mjs 스크립트
+// .mjs 스크립트는 JS 추론 타입을 사용한다
 import { prepareAvatar } from '../scripts/prepare-avatar.mjs';
 
 let dir: string;
@@ -22,7 +22,7 @@ afterEach(async () => {
 
 const exists = (p: string) => access(p).then(() => true, () => false);
 const respond = (status: number, type: string, body: Uint8Array = new Uint8Array([1, 2, 3])) =>
-  (async () => new Response(body, { status, headers: { 'content-type': type } })) as unknown as typeof fetch;
+  (async () => new Response(body as BodyInit, { status, headers: { 'content-type': type } })) as unknown as typeof fetch;
 
 test('이미지 응답이면 파일을 쓴다', async () => {
   const bytes = new Uint8Array([137, 80, 78, 71, 9, 8]);
