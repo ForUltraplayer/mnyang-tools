@@ -3,7 +3,7 @@
  * @author: ForUltraplayer
  * @brief 디바이스 필터, 검색, 개수 집계, URL 파라미터 해석, 정렬 순수 함수
  */
-import { DEVICES, type Device } from './schema';
+import { DEVICES, type Device } from './devices';
 
 export type DeviceFilter = Device | 'all';
 

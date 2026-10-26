@@ -5,17 +5,11 @@
  */
 import { z } from 'astro/zod';
 
-export const DEVICES = ['windows', 'android', 'web'] as const;
-export type Device = (typeof DEVICES)[number];
+import { DEVICES, DEVICE_LABELS, type Device } from './devices';
+export { DEVICES, DEVICE_LABELS, type Device };
 
 export const SOURCES = ['mine', 'modified', 'external'] as const;
 export type Source = (typeof SOURCES)[number];
-
-export const DEVICE_LABELS: Record<Device, string> = {
-  windows: 'Windows',
-  android: 'Android',
-  web: '웹',
-};
 
 export const SOURCE_LABELS: Record<Source, string> = {
   mine: '직접 만듦',
