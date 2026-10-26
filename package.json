@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/prepare-avatar.mjs",
+    "predev": "node scripts/prepare-avatar.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "test": "vitest run --exclude tests/dist.test.ts",
