@@ -1,0 +1,51 @@
+---
+// @file [slug].astro
+// @author: ForUltraplayer
+// @brief 항목 상세 화면: 요약, 칩, 받기·저장소·사이트 버튼, 마크다운 본문
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import OwnerBadge from '../../components/OwnerBadge.astro';
+import { fetchReleases, releaseOptionsFromEnv, type ReleaseInfo } from '../../lib/github';
+import { githubRepoUrl, resolveDownload, withBase } from '../../lib/links';
+import { DEVICE_LABELS, SOURCE_LABELS, isOwned } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('items');
+  const repos = entries.flatMap((e) => (e.data.repo ? [e.data.repo] : []));
+  const releases = await fetchReleases(repos, { ...releaseOptionsFromEnv(process.env), warn: console.warn });
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      release: (entry.data.repo ? releases.get(entry.data.repo) : undefined) ?? ({ status: 'unknown' } as ReleaseInfo),
+    },
+  }));
+}
+
+const { entry, release } = Astro.props;
+const data = entry.data;
+const download = resolveDownload(data, release);
+const hasBody = (entry.body ?? '').trim().length > 0;
+const { Content } = await render(entry);
+---
+<Base title={`${data.title} · mnyang-tools`} description={data.summary}>
+  <a class="back-link" href={withBase('')}>← 목록</a>
+  <h1 class="detail-title">
+    <span>{data.title}</span>
+    {isOwned(data.source) && <OwnerBadge />}
+  </h1>
+  <p class="detail-summary">{data.summary}</p>
+  <div class="chips">
+    {data.devices.map((d) => <span class="chip">{DEVICE_LABELS[d]}</span>)}
+    <span class="chip">{SOURCE_LABELS[data.source]}</span>
+    {release.status === 'found' && <span class="chip">{release.tag}</span>}
+  </div>
+  <div class="actions">
+    {download && <a class="btn btn-primary" data-action="download" href={download} rel="noopener">받기</a>}
+    {data.repo && <a class="btn" data-action="repo" href={githubRepoUrl(data.repo)} rel="noopener">GitHub 저장소</a>}
+    {data.website && <a class="btn" data-action="website" href={data.website} rel="noopener">사이트</a>}
+  </div>
+  <article class="prose">
+    {hasBody ? <Content /> : <p class="prose-empty">아직 작성된 사용법이 없습니다.</p>}
+  </article>
+</Base>

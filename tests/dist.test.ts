@@ -66,3 +66,29 @@ test('검색창과 결과 없음 문구가 있다', () => {
   expect(root.querySelector('input#search')).not.toBeNull();
   expect(root.querySelector('p#empty')?.text).toContain('검색 결과가 없습니다');
 });
+
+const slugs = ['vencord', 'morphe', 'morphe-patches', 'pc-optimizer', 'notification-filter',
+  'notifications-pro-mnyang', 'spotify-pc', 'spotify-android', 'galaxy-book-enabler', 'shutter-sound-zero'];
+
+test('항목마다 상세 페이지가 있다', () => {
+  for (const s of slugs) expect(() => readDist(`items/${s}/index.html`)).not.toThrow();
+});
+test('Release가 있는 내 저장소는 받기 버튼이 releases/latest로 간다', () => {
+  const a = readDist('items/pc-optimizer/index.html').querySelector('a[data-action="download"]');
+  expect(a?.getAttribute('href')).toBe('https://github.com/ForUltraplayer/pc_optimizer/releases/latest');
+});
+test('Release가 없으면 받기 버튼 없이 저장소 링크만 있다', () => {
+  const root = readDist('items/spotify-pc/index.html');
+  expect(root.querySelector('a[data-action="download"]')).toBeNull();
+  expect(root.querySelector('a[data-action="repo"]')?.getAttribute('href')).toBe('https://github.com/ForUltraplayer/SPOTIFY_PC');
+});
+test('사이트만 있는 외부 항목은 사이트 버튼만 있다', () => {
+  const root = readDist('items/vencord/index.html');
+  expect(root.querySelector('a[data-action="website"]')?.getAttribute('href')).toBe('https://vencord.dev/');
+  expect(root.querySelector('a[data-action="repo"]')).toBeNull();
+  expect(root.querySelector('a[data-action="download"]')).toBeNull();
+});
+test('본문이 빈 항목은 안내 문구를 보여 준다', () => {
+  expect(readDist('items/morphe/index.html').text).toContain('아직 작성된 사용법이 없습니다');
+  expect(readDist('items/pc-optimizer/index.html').text).not.toContain('아직 작성된 사용법이 없습니다');
+});
