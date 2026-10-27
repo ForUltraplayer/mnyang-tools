@@ -7,7 +7,7 @@ import Base from '../../layouts/Base.astro';
 import OwnerBadge from '../../components/OwnerBadge.astro';
 import { fetchReleases, releaseOptionsFromEnv, type ReleaseInfo } from '../../lib/github';
 import { githubRepoUrl, resolveDownload, withBase } from '../../lib/links';
-import { DEVICE_LABELS, SOURCE_LABELS, isOwned } from '../../lib/schema';
+import { CATEGORY_LABELS, DEVICE_LABELS, SOURCE_LABELS, isOwned } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const entries = await getCollection('items');
@@ -37,6 +37,7 @@ const { Content } = await render(entry);
   <p class="detail-summary">{data.summary}</p>
   <div class="chips">
     {data.devices.map((d) => <span class="chip">{DEVICE_LABELS[d]}</span>)}
+    <span class="chip chip-category">{CATEGORY_LABELS[data.category]}</span>
     <span class="chip">{SOURCE_LABELS[data.source]}</span>
     {release.status === 'found' && <span class="chip">{release.tag}</span>}
   </div>

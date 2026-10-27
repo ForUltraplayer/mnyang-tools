@@ -3,6 +3,7 @@ title: "TestMem5"
 summary: "Windows에서 RAM 오류와 메모리 설정 안정성 검사"
 devices: [windows]
 source: external
+category: cpu-ram
 website: "https://github.com/CoolCmd/TestMem5/releases"
 ---
 

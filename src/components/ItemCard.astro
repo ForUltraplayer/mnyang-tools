@@ -4,7 +4,7 @@
 // @brief 목록 화면의 항목 카드(제목, 출처 배지, 요약, 디바이스 칩)
 import OwnerBadge from './OwnerBadge.astro';
 import { withBase } from '../lib/links';
-import { DEVICE_LABELS, isOwned, type ItemData } from '../lib/schema';
+import { CATEGORY_LABELS, DEVICE_LABELS, isOwned, type ItemData } from '../lib/schema';
 
 interface Props {
   slug: string;
@@ -17,6 +17,7 @@ const { slug, data } = Astro.props;
   data-item
   href={withBase(`items/${slug}/`)}
   data-devices={data.devices.join(' ')}
+  data-category={data.category}
   data-title={data.title}
   data-summary={data.summary}
 >
@@ -27,5 +28,6 @@ const { slug, data } = Astro.props;
   <p class="card-summary">{data.summary}</p>
   <div class="chips">
     {data.devices.map((d) => <span class="chip">{DEVICE_LABELS[d]}</span>)}
+    <span class="chip chip-category">{CATEGORY_LABELS[data.category]}</span>
   </div>
 </a>

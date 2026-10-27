@@ -3,6 +3,7 @@ title: "Rufus"
 summary: "ISO 이미지로 부팅 가능한 USB 드라이브 만들기"
 devices: [windows]
 source: external
+category: install
 website: "https://rufus.ie/"
 ---
 

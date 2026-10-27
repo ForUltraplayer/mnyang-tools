@@ -3,6 +3,7 @@ title: "DDU"
 summary: "그래픽 드라이버를 제거하고 재설치를 준비하는 도구"
 devices: [windows]
 source: external
+category: gpu
 website: "https://www.wagnardsoft.com/display-driver-uninstaller-ddu"
 ---
 

@@ -3,6 +3,7 @@ title: "Photon Studio"
 summary: "PSD·PSB와 레이어를 지원하는 사진 편집기"
 devices: [windows]
 source: external
+category: image
 website: "https://tenzen.studio/photon/#get-photon"
 ---
 

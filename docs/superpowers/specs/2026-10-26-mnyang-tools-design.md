@@ -17,7 +17,7 @@
 - 비용 0원, 상시 운영할 서버 없음.
 
 비목표
-- 디바이스 아래 세부 카테고리. 사용자가 명시적으로 빼기로 했다.
+- (2026-10-27 철회) 디바이스 아래 세부 카테고리. 처음에는 사용자가 빼기로 했으나, 항목이 45개(Windows 40개)로 늘어 사용자 요청으로 카테고리를 추가했다. §4.4 참고.
 - 로그인, 댓글, 평점, 방문자 통계.
 - 관리자 화면이나 웹에서 항목 편집.
 - 다국어. 한국어만 쓴다.
@@ -69,6 +69,7 @@
 | `summary` | 예 | 카드와 상세 상단에 보이는 한 줄 설명 (한국어) |
 | `devices` | 예 | `windows`, `android`, `web` 중 하나 이상 |
 | `source` | 예 | `mine`, `modified`, `external` |
+| `category` | 예 | §4.4의 카테고리 값 하나 |
 | `repo` | 아니오 | `owner/name` 형식 GitHub 저장소 |
 | `website` | 아니오 | 외부 사이트 주소 |
 | `download` | 아니오 | 받기 버튼 주소를 직접 지정할 때 |
@@ -98,6 +99,27 @@ repo: ForUltraplayer/pc_optimizer
 
 본문이 비어 있어도 빌드는 되어야 한다. 처음에는 요약만 있고 본문은 사용자가 차차 채운다.
 
+### 4.4 카테고리 (2026-10-27 추가)
+
+항목마다 카테고리 하나를 지정한다. 여러 분야에 걸치는 도구는 주된 용도 쪽에 넣는다(예: OCCT는 CPU·RAM, HWiNFO64는 시스템·진단). 값과 표시 순서는 `src/lib/categories.ts`가 기준이다.
+
+| 값 | 화면 표기 | 예시 |
+|---|---|---|
+| `cpu-ram` | CPU·RAM | CPU-Z, Prime95, MemTest86 |
+| `gpu` | GPU | GPU-Z, FurMark, DDU |
+| `storage` | 저장장치 | CrystalDiskInfo, CrystalDiskMark |
+| `files` | 파일 관리 | Everything, WizTree, 7-Zip |
+| `system` | 시스템·진단 | pc_optimizer, HWiNFO64, PowerToys |
+| `mods` | 광고 제거·앱 개조 | KakaoTalkAdBlock, Vencord, Morphe |
+| `image` | 이미지·캡처 | GIMP, ShareX |
+| `media` | 미디어·녹화 | OBS Studio, VLC, SPOTIFY_PC |
+| `install` | 설치 USB | Rufus |
+| `docs` | 문서 | LibreOffice, Notepad++ |
+| `notification` | 알림 | notification-filter |
+| `camera` | 카메라 | ShutterSoundZero |
+
+저장장치와 파일 관리는 사용자 요청으로 나눴다. 디스크 상태와 속도 측정은 저장장치, 용량 분석·검색·압축은 파일 관리이다.
+
 ## 5. 화면
 
 시안은 브라우저 미리보기에서 사용자가 확인하고 승인했다(A안 + 검색바).
@@ -109,9 +131,10 @@ repo: ForUltraplayer/pc_optimizer
 1. 헤더: GitHub 프로필 이미지, 사이트 이름 `mnyang-tools`, 계정명 `ForUltraplayer`. 프로필 영역은 `https://github.com/ForUltraplayer`로 연결한다.
 2. 검색바: 제목과 요약을 대상으로 즉시 거른다. 상세 본문은 검색 대상이 아니다.
 3. 디바이스 탭: `전체`, `Windows`, `Android`, `웹`. 탭마다 항목 수를 표시한다. 검색과 탭은 함께 적용된다.
-4. 카드 그리드: 카드마다 제목, 요약, 디바이스 칩, 출처가 `mine` 또는 `modified`이면 작은 프로필 배지. 카드를 누르면 상세 페이지로 간다.
+4. 카테고리 줄 (2026-10-27 추가): `전체` 탭에서는 숨기고 모든 항목을 보여 준다. 디바이스 탭을 고르면 그 디바이스에 있는 카테고리만 `전체`와 함께 개수와 같이 나온다. 그 디바이스의 카테고리가 2개 미만이면(현재 웹) 줄을 숨긴다. 디바이스를 바꾸면 카테고리는 `전체`로 돌아간다. 검색, 디바이스, 카테고리는 함께 적용된다.
+5. 카드 그리드: 카드마다 제목, 요약, 디바이스 칩, 카테고리 칩, 출처가 `mine` 또는 `modified`이면 작은 프로필 배지. 카드를 누르면 상세 페이지로 간다.
 
-선택한 탭은 주소에 반영해(예: `?device=android`) 링크를 공유할 수 있게 한다. 이는 설계자 판단이다.
+선택한 탭과 카테고리는 주소에 반영해(예: `?device=windows&category=gpu`) 링크를 공유할 수 있게 한다. 해당 디바이스에 없는 카테고리 값은 `전체`로 처리한다. 이는 설계자 판단이다.
 
 ### 5.2 상세 페이지
 

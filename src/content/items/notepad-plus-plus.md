@@ -3,6 +3,7 @@ title: "Notepad++"
 summary: "탭·문법 강조·검색과 바꾸기를 지원하는 텍스트 편집기"
 devices: [windows]
 source: external
+category: docs
 website: "https://notepad-plus-plus.org/downloads/"
 ---
 

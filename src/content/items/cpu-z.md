@@ -3,6 +3,7 @@ title: "CPU-Z"
 summary: "CPU·메인보드·RAM 사양과 현재 클럭 확인"
 devices: [windows]
 source: external
+category: cpu-ram
 website: "https://www.cpuid.com/softwares/cpu-z.html"
 ---
 

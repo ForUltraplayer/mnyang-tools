@@ -5,8 +5,9 @@
  */
 import { z } from 'astro/zod';
 
+import { CATEGORIES, CATEGORY_LABELS, type Category } from './categories';
 import { DEVICES, DEVICE_LABELS, type Device } from './devices';
-export { DEVICES, DEVICE_LABELS, type Device };
+export { CATEGORIES, CATEGORY_LABELS, DEVICES, DEVICE_LABELS, type Category, type Device };
 
 export const SOURCES = ['mine', 'modified', 'external'] as const;
 export type Source = (typeof SOURCES)[number];
@@ -26,6 +27,7 @@ export const itemSchema = z
     summary: z.string().min(1),
     devices: z.array(z.enum(DEVICES)).min(1),
     source: z.enum(SOURCES),
+    category: z.enum(CATEGORIES),
     repo: z.string().regex(/^[\w.-]+\/[\w.-]+$/).optional(),
     website: httpUrl.optional(),
     download: httpUrl.optional(),

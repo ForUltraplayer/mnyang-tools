@@ -1,10 +1,11 @@
 ---
 // @file index.astro
 // @author: ForUltraplayer
-// @brief 목록 화면: 검색창, 디바이스 탭, 항목 카드 목록
+// @brief 목록 화면: 검색창, 디바이스 탭, 카테고리 줄, 항목 카드 목록
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ItemCard from '../components/ItemCard.astro';
+import { CATEGORIES, CATEGORY_LABELS } from '../lib/categories';
 import { DEVICE_LABELS } from '../lib/devices';
 import { countByDevice, sortItems } from '../lib/filter';
 
@@ -25,6 +26,13 @@ const tabs = [
     {tabs.map((t) => (
       <button class="tab" type="button" data-device={t.key} aria-pressed={t.key === 'all' ? 'true' : 'false'}>
         {t.label}<span data-count>{counts[t.key]}</span>
+      </button>
+    ))}
+  </div>
+  <div id="categories" class="cats" role="group" aria-label="카테고리 필터" hidden>
+    {['all', ...CATEGORIES].map((c) => (
+      <button class="cat" type="button" data-category={c} aria-pressed={c === 'all' ? 'true' : 'false'}>
+        {c === 'all' ? '전체' : CATEGORY_LABELS[c as keyof typeof CATEGORY_LABELS]}<span data-count></span>
       </button>
     ))}
   </div>

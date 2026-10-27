@@ -3,6 +3,7 @@ title: "CrystalDiskInfo"
 summary: "SSD·HDD의 건강 상태와 S.M.A.R.T. 정보, 온도 확인"
 devices: [windows]
 source: external
+category: storage
 website: "https://crystalmark.info/en/software/crystaldiskinfo/"
 ---
 

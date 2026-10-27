@@ -6,7 +6,7 @@
 import { expect, test } from 'vitest';
 import { itemSchema, isOwned, type Source } from '../src/lib/schema';
 
-const ok = { title: 'x', summary: 'y', devices: ['windows'], source: 'mine', repo: 'a/b' };
+const ok = { title: 'x', summary: 'y', devices: ['windows'], source: 'mine', repo: 'a/b', category: 'system' };
 
 test('정상 항목을 받고 order 기본값을 채운다', () => {
   expect(itemSchema.parse(ok).order).toBe(100);

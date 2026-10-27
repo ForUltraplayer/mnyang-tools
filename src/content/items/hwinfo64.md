@@ -3,6 +3,7 @@ title: "HWiNFO64"
 summary: "CPU·GPU·SSD의 온도, 클럭, 전력과 센서 정보 확인"
 devices: [windows]
 source: external
+category: system
 website: "https://www.hwinfo.com/download/"
 ---
 

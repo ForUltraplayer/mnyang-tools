@@ -3,6 +3,7 @@ title: "반디집"
 summary: "ZIP·7Z·RAR·ALZ·EGG 등을 지원하는 압축 프로그램"
 devices: [windows]
 source: external
+category: files
 website: "https://kr.bandisoft.com/bandizip/"
 ---
 

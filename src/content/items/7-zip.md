@@ -3,6 +3,7 @@ title: "7-Zip"
 summary: "7Z·ZIP 압축과 다양한 형식의 압축 해제를 지원하는 도구"
 devices: [windows]
 source: external
+category: files
 website: "https://www.7-zip.org/"
 ---
 

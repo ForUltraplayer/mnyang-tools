@@ -3,6 +3,7 @@ title: "Cinebench"
 summary: "렌더링 작업으로 CPU 성능을 측정하는 벤치마크"
 devices: [windows]
 source: external
+category: cpu-ram
 website: "https://www.maxon.net/en/cinebench"
 ---
 

@@ -3,6 +3,7 @@ title: "PowerToys"
 summary: "창 배치·키 재매핑·일괄 이름 변경 등 Windows 편의 도구 모음"
 devices: [windows]
 source: external
+category: system
 website: "https://learn.microsoft.com/ko-kr/windows/powertoys/install"
 ---
 

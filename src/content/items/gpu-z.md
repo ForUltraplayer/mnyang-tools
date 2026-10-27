@@ -3,6 +3,7 @@ title: "GPU-Z"
 summary: "그래픽카드 사양, 드라이버와 센서 정보 확인"
 devices: [windows]
 source: external
+category: gpu
 website: "https://www.techpowerup.com/gpuz/"
 ---
 

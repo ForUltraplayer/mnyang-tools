@@ -3,6 +3,7 @@ title: "MemTest86"
 summary: "USB로 부팅해 운영체제 밖에서 RAM 오류 검사"
 devices: [windows]
 source: external
+category: cpu-ram
 website: "https://www.memtest86.com/download.htm"
 ---
 

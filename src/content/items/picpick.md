@@ -3,6 +3,7 @@ title: "PicPick"
 summary: "화면 캡처, 이미지 편집과 색상 추출 도구"
 devices: [windows]
 source: external
+category: image
 website: "https://picpick.app/ko/download/"
 ---
 

@@ -3,6 +3,7 @@ title: "CrystalDiskMark"
 summary: "SSD·HDD의 순차·랜덤 읽기 및 쓰기 속도 측정"
 devices: [windows]
 source: external
+category: storage
 website: "https://crystalmark.info/en/software/crystaldiskmark/"
 ---
 

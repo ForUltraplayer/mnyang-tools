@@ -3,6 +3,7 @@ title: "Windows 11 설치 USB 만들기"
 summary: "Microsoft 공식 도구로 Windows 11 설치 USB 만들기"
 devices: [windows]
 source: external
+category: install
 website: "https://www.microsoft.com/software-download/windows11"
 ---
 

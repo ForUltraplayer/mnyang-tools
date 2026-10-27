@@ -3,6 +3,7 @@ title: "LibreOffice"
 summary: "문서·스프레드시트·발표 자료를 위한 오픈 소스 오피스"
 devices: [windows]
 source: external
+category: docs
 website: "https://ko.libreoffice.org/download/libreoffice-stable/"
 ---
 

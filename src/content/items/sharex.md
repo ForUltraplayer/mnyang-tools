@@ -3,6 +3,7 @@ title: "ShareX"
 summary: "영역·스크롤 캡처, 화면 녹화와 OCR 도구"
 devices: [windows]
 source: external
+category: image
 website: "https://getsharex.com/"
 ---
 

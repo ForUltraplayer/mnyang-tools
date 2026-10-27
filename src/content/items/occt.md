@@ -3,6 +3,7 @@ title: "OCCT"
 summary: "CPU·GPU·RAM·전원 부하 테스트와 오류 확인"
 devices: [windows]
 source: external
+category: cpu-ram
 website: "https://www.ocbase.com/download-personal"
 ---
 

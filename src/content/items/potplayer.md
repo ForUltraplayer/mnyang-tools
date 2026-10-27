@@ -3,6 +3,7 @@ title: "팟플레이어"
 summary: "자막과 하드웨어 가속을 지원하는 Windows 동영상 플레이어"
 devices: [windows]
 source: external
+category: media
 website: "https://potplayer.tv/?lang=ko"
 ---
 

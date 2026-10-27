@@ -3,6 +3,7 @@ title: "Prime95"
 summary: "CPU 부하 테스트와 연산 오류로 안정성 확인"
 devices: [windows]
 source: external
+category: cpu-ram
 website: "https://www.mersenne.org/download/"
 ---
 

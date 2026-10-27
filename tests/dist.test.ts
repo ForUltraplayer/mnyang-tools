@@ -61,6 +61,28 @@ test('프로필 배지는 직접 만듦과 수정판 6개에만 붙는다', () =
   expect(readDist('index.html').querySelectorAll('[data-item] .owner-badge')).toHaveLength(6);
 });
 
+test('카테고리 줄은 처음에 숨겨져 있고 전체와 카테고리 버튼을 정해진 순서로 가진다', () => {
+  const row = readDist('index.html').querySelector('#categories');
+  expect(row?.hasAttribute('hidden')).toBe(true);
+  const keys = row!.querySelectorAll('button.cat[data-category]').map((b) => b.getAttribute('data-category'));
+  expect(keys[0]).toBe('all');
+  expect(keys.slice(1, 5)).toEqual(['cpu-ram', 'gpu', 'storage', 'files']);
+  expect(row!.querySelector('button.cat[data-category="files"]')?.text).toContain('파일 관리');
+});
+
+test('카드마다 카테고리 값과 카테고리 칩이 있다', () => {
+  const root = readDist('index.html');
+  const cards = root.querySelectorAll('[data-item]');
+  expect(cards.every((c) => (c.getAttribute('data-category') ?? '') !== '')).toBe(true);
+  const ddu = cards.find((c) => c.getAttribute('data-title') === 'DDU');
+  expect(ddu?.getAttribute('data-category')).toBe('gpu');
+  expect(ddu?.querySelector('.chips')?.text).toContain('GPU');
+});
+
+test('상세 페이지에 카테고리 칩이 있다', () => {
+  expect(readDist('items/wiztree/index.html').querySelector('.chips')?.text).toContain('파일 관리');
+});
+
 test('검색창과 결과 없음 문구가 있다', () => {
   const root = readDist('index.html');
   expect(root.querySelector('input#search')).not.toBeNull();

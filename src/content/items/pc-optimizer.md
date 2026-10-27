@@ -3,6 +3,7 @@ title: "pc_optimizer"
 summary: "Windows PC 진단, 정리, 최적화 도구"
 devices: [windows]
 source: mine
+category: system
 repo: "ForUltraplayer/pc_optimizer"
 ---
 

@@ -3,6 +3,7 @@ title: "PhotoCraft"
 summary: "PSD·PSB 파일과 레이어·마스크 편집 도구"
 devices: [windows]
 source: external
+category: image
 website: "https://getartcraft.com/apps/photocraft"
 ---
 

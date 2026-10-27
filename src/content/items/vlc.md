@@ -3,6 +3,7 @@ title: "VLC"
 summary: "다양한 동영상·음악 형식과 자막을 지원하는 미디어 플레이어"
 devices: [windows]
 source: external
+category: media
 website: "https://www.videolan.org/vlc/"
 ---
 

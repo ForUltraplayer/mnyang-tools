@@ -3,6 +3,7 @@ title: "WizTree"
 summary: "큰 파일과 폴더를 찾아 디스크 공간 사용량 확인"
 devices: [windows]
 source: external
+category: files
 website: "https://diskanalyzer.com/download"
 ---
 

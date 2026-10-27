@@ -3,6 +3,7 @@ title: "XnConvert"
 summary: "여러 이미지의 크기·형식·품질을 한 번에 변환"
 devices: [windows]
 source: external
+category: image
 website: "https://www.xnview.com/en/xnconvert/#downloads"
 ---
 

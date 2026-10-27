@@ -3,6 +3,7 @@ title: "OBS Studio"
 summary: "화면·창·카메라와 음성을 조합하는 녹화·방송 도구"
 devices: [windows]
 source: external
+category: media
 website: "https://obsproject.com/download"
 ---
 

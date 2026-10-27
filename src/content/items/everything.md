@@ -3,6 +3,7 @@ title: "Everything"
 summary: "파일·폴더 이름을 색인해 빠르게 찾는 검색 도구"
 devices: [windows]
 source: external
+category: files
 website: "https://www.voidtools.com/ko-kr/downloads/"
 ---
 

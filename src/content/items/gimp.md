@@ -3,6 +3,7 @@ title: "GIMP"
 summary: "레이어·마스크·필터를 지원하는 이미지 편집기"
 devices: [windows]
 source: external
+category: image
 website: "https://www.gimp.org/downloads/"
 ---
 

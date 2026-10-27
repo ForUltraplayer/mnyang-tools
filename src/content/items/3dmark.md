@@ -3,6 +3,7 @@ title: "3DMark"
 summary: "게임과 유사한 부하로 그래픽 성능 점수 측정"
 devices: [windows]
 source: external
+category: gpu
 website: "https://benchmarks.ul.com/3dmark"
 ---
 

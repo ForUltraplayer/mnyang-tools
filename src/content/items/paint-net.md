@@ -3,6 +3,7 @@ title: "Paint.NET"
 summary: "Windows용 사진 보정·레이어 이미지 편집기"
 devices: [windows]
 source: external
+category: image
 website: "https://paint.net/download.html"
 ---
 

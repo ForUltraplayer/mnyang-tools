@@ -3,6 +3,7 @@ title: KakaoTalkAdBlock
 summary: 카카오톡 PC 클라이언트 광고 차단
 devices: [windows]
 source: external
+category: mods
 repo: blurfx/KakaoTalkAdBlock
 ---
 

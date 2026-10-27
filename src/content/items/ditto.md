@@ -3,6 +3,7 @@ title: "Ditto"
 summary: "복사한 글·이미지를 기록하고 검색하는 클립보드 도구"
 devices: [windows]
 source: external
+category: system
 website: "https://sabrogden.github.io/Ditto/"
 ---
 

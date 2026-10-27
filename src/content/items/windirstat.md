@@ -3,6 +3,7 @@ title: "WinDirStat"
 summary: "파일·폴더별 디스크 사용량을 지도로 확인"
 devices: [windows]
 source: external
+category: files
 website: "https://windirstat.net/download.html"
 ---
 

@@ -3,6 +3,7 @@ title: "FurMark"
 summary: "GPU 부하 테스트로 온도와 이상 화면 확인"
 devices: [windows]
 source: external
+category: gpu
 website: "https://www.geeks3d.com/furmark/"
 ---
 
