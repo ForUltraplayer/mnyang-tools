@@ -107,7 +107,10 @@ test('Release가 없으면 받기 버튼 없이 저장소 링크만 있다', () 
 });
 test('사이트만 있는 외부 항목은 사이트 버튼만 있다', () => {
   const root = readDist('items/vencord/index.html');
-  expect(root.querySelector('a[data-action="website"]')?.getAttribute('href')).toBe('https://vencord.dev/');
+  const site = root.querySelector('a[data-action="website"]');
+  expect(site?.getAttribute('href')).toBe('https://vencord.dev/');
+  expect(site?.getAttribute('target')).toBe('_blank');
+  expect(site?.getAttribute('rel')).toBe('noopener noreferrer');
   expect(root.querySelector('a[data-action="repo"]')).toBeNull();
   expect(root.querySelector('a[data-action="download"]')).toBeNull();
 });

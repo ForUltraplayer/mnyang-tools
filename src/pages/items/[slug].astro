@@ -44,7 +44,7 @@ const { Content } = await render(entry);
   <div class="actions">
     {download && <a class="btn btn-primary" data-action="download" href={download} rel="noopener">받기</a>}
     {data.repo && <a class="btn" data-action="repo" href={githubRepoUrl(data.repo)} rel="noopener">GitHub 저장소</a>}
-    {data.website && <a class="btn" data-action="website" href={data.website} rel="noopener">사이트</a>}
+    {data.website && <a class="btn" data-action="website" href={data.website} target="_blank" rel="noopener noreferrer">사이트</a>}
   </div>
   <article class="prose">
     {hasBody ? <Content /> : <p class="prose-empty">아직 작성된 사용법이 없습니다.</p>}
