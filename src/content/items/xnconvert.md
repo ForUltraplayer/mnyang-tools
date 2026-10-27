@@ -7,6 +7,11 @@ category: image
 website: "https://www.xnview.com/en/xnconvert/#downloads"
 ---
 
+<figure class="shot">
+  <img src="https://www.xnview.com/img/screenshots/xnconvert-win-01.jpg" alt="XnConvert Windows 화면" loading="lazy" decoding="async" />
+  <figcaption>XnConvert Windows 화면 · 출처: <a href="https://www.xnview.com/en/xnconvert/" target="_blank" rel="noopener noreferrer">xnview.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 이미지 묶음에 크기 변경·회전·형식 변환 등을 순서대로 적용합니다.

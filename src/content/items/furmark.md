@@ -7,6 +7,11 @@ category: gpu
 website: "https://www.geeks3d.com/furmark/"
 ---
 
+<figure class="shot">
+  <img src="https://www.geeks3d.com/furmark/i/furmark2.jpg" alt="FurMark 2 실행 화면" loading="lazy" decoding="async" />
+  <figcaption>FurMark 2 실행 화면 · 출처: <a href="https://www.geeks3d.com/furmark/" target="_blank" rel="noopener noreferrer">geeks3d.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 GPU에 최대 부하를 걸어 온도·클럭·이상 화면(아티팩트)을 확인합니다.

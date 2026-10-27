@@ -7,6 +7,11 @@ category: docs
 website: "https://ko.libreoffice.org/download/libreoffice-stable/"
 ---
 
+<figure class="shot">
+  <img src="https://www.libreoffice.org/media/screenshot_writer_hero.png" alt="LibreOffice Writer 화면" loading="lazy" decoding="async" />
+  <figcaption>LibreOffice Writer 화면 · 출처: <a href="https://www.libreoffice.org/discover/writer/" target="_blank" rel="noopener noreferrer">libreoffice.org</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 Writer·Calc·Impress 등을 묶은 무료 오픈 소스 오피스입니다.

@@ -7,6 +7,11 @@ category: cpu-ram
 website: "https://github.com/CoolCmd/TestMem5/releases"
 ---
 
+<figure class="shot">
+  <img src="https://raw.githubusercontent.com/CoolCmd/TestMem5/master/Screenshot.png" alt="TestMem5 실행 화면" loading="lazy" decoding="async" />
+  <figcaption>TestMem5 실행 화면 · 출처: <a href="https://github.com/CoolCmd/TestMem5" target="_blank" rel="noopener noreferrer">github.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 Windows에서 실행해 램을 반복 검사합니다. 커뮤니티에서 널리 쓰는 도구입니다.

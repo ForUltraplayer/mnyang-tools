@@ -114,6 +114,14 @@ test('사이트만 있는 외부 항목은 사이트 버튼만 있다', () => {
   expect(root.querySelector('a[data-action="repo"]')).toBeNull();
   expect(root.querySelector('a[data-action="download"]')).toBeNull();
 });
+test('화면 이미지는 원본 https 주소로 링크하고 새 탭으로 열리는 출처를 단다', () => {
+  const fig = readDist('items/crystaldiskinfo/index.html').querySelector('figure.shot');
+  expect(fig?.querySelector('img')?.getAttribute('src')).toMatch(/^https:\/\/crystalmark\.info\//);
+  const credit = fig?.querySelector('figcaption a');
+  expect(fig?.querySelector('figcaption')?.text).toContain('출처');
+  expect(credit?.getAttribute('target')).toBe('_blank');
+  expect(credit?.getAttribute('rel')).toBe('noopener noreferrer');
+});
 test('본문이 빈 항목은 안내 문구를 보여 준다', () => {
   expect(readDist('items/morphe/index.html').text).toContain('아직 작성된 사용법이 없습니다');
   expect(readDist('items/pc-optimizer/index.html').text).not.toContain('아직 작성된 사용법이 없습니다');

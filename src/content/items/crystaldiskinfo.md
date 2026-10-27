@@ -7,6 +7,11 @@ category: storage
 website: "https://crystalmark.info/en/software/crystaldiskinfo/"
 ---
 
+<figure class="shot">
+  <img src="https://crystalmark.info/en/wp-content/uploads/sites/3/CrystalDiskInfo9Aoi-en.png" alt="CrystalDiskInfo 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>CrystalDiskInfo 메인 화면 · 출처: <a href="https://crystalmark.info/en/software/crystaldiskinfo/" target="_blank" rel="noopener noreferrer">crystalmark.info</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 SSD·HDD의 자체 진단(S.M.A.R.T.) 값과 온도를 읽어 '정상/주의/위험'으로 보여 줍니다.

@@ -7,6 +7,11 @@ category: storage
 website: "https://crystalmark.info/en/software/crystaldiskmark/"
 ---
 
+<figure class="shot">
+  <img src="https://crystalmark.info/en/wp-content/uploads/sites/3/CDM9Default-en-1.png" alt="CrystalDiskMark 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>CrystalDiskMark 메인 화면 · 출처: <a href="https://crystalmark.info/en/software/crystaldiskmark/" target="_blank" rel="noopener noreferrer">crystalmark.info</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 선택한 드라이브에 임시 파일을 써서 순차·랜덤 읽기·쓰기 속도를 재고 지웁니다.

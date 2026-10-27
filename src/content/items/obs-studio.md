@@ -7,6 +7,11 @@ category: media
 website: "https://obsproject.com/download"
 ---
 
+<figure class="shot">
+  <img src="https://obsproject.com/assets/images/features-new/hero_32_1_1.png" alt="OBS Studio 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>OBS Studio 메인 화면 · 출처: <a href="https://obsproject.com/" target="_blank" rel="noopener noreferrer">obsproject.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 화면·창·카메라와 음성을 조합해 녹화·방송하는 무료 오픈 소스 도구입니다.

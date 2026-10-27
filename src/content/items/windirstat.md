@@ -7,6 +7,11 @@ category: files
 website: "https://windirstat.net/download.html"
 ---
 
+<figure class="shot">
+  <img src="https://windirstat.net/images/windirstat.jpg" alt="WinDirStat 트리맵 화면" loading="lazy" decoding="async" />
+  <figcaption>WinDirStat 트리맵 화면 · 출처: <a href="https://windirstat.net/" target="_blank" rel="noopener noreferrer">windirstat.net</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 디스크 공간을 차지하는 파일과 폴더를 시각적인 지도로 표시합니다.

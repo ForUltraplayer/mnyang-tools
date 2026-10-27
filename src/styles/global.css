@@ -219,6 +219,11 @@ main { padding-top: 24px; padding-bottom: 56px; }
 .prose pre { overflow-x: auto; padding: 12px 14px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; }
 .prose pre code { padding: 0; background: none; border: 0; }
 .prose-empty { color: var(--muted); }
+/* 공식 사이트 화면 이미지(원본 주소로 링크)와 출처 */
+.prose .shot { margin: 0 0 20px; }
+.prose .shot img { width: 100%; max-height: 520px; margin: 0 0 6px; object-fit: contain; background: var(--surface-2); }
+.prose .shot figcaption { font-size: 0.8rem; color: var(--muted); }
+.prose .shot figcaption a { color: inherit; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

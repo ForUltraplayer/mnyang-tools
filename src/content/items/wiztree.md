@@ -7,6 +7,11 @@ category: files
 website: "https://diskanalyzer.com/download"
 ---
 
+<figure class="shot">
+  <img src="https://antibodysoftware-17031.kxcdn.com/images/wiztree_treeviewwithmap4.jpg" alt="WizTree 트리 보기 화면" loading="lazy" decoding="async" />
+  <figcaption>WizTree 트리 보기 화면 · 출처: <a href="https://diskanalyzer.com/" target="_blank" rel="noopener noreferrer">diskanalyzer.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 디스크 사용량을 목록과 크기별 사각형으로 보여 줍니다.

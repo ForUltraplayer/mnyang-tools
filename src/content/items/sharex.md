@@ -7,6 +7,11 @@ category: image
 website: "https://getsharex.com/"
 ---
 
+<figure class="shot">
+  <img src="https://getsharex.com/img/ShareX_Screenshot.png" alt="ShareX 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>ShareX 메인 화면 · 출처: <a href="https://getsharex.com/" target="_blank" rel="noopener noreferrer">getsharex.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 영역·스크롤 캡처, 화면 녹화, OCR 등을 제공하는 무료 오픈 소스 도구입니다.

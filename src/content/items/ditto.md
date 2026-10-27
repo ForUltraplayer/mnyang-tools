@@ -7,6 +7,11 @@ category: system
 website: "https://sabrogden.github.io/Ditto/"
 ---
 
+<figure class="shot">
+  <img src="https://sabrogden.github.io/Ditto/ditto.gif" alt="Ditto 클립보드 화면" loading="lazy" decoding="async" />
+  <figcaption>Ditto 클립보드 화면 · 출처: <a href="https://sabrogden.github.io/Ditto/" target="_blank" rel="noopener noreferrer">sabrogden.github.io</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 복사한 항목을 보관하고 검색해 다시 붙여넣는 무료 오픈 소스 클립보드 도구입니다.

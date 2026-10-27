@@ -7,6 +7,11 @@ category: cpu-ram
 website: "https://www.ocbase.com/download-personal"
 ---
 
+<figure class="shot">
+  <img src="https://www.ocbase.com/images/support/application-overview-v13.png" alt="OCCT 애플리케이션 개요 화면" loading="lazy" decoding="async" />
+  <figcaption>OCCT 애플리케이션 개요 화면 · 출처: <a href="https://www.ocbase.com/download-personal" target="_blank" rel="noopener noreferrer">ocbase.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 부품별 테스트와 온도·전압 그래프를 한 화면에서 보여 주고 오류를 셉니다.

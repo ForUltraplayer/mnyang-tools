@@ -7,6 +7,11 @@ category: install
 website: "https://rufus.ie/"
 ---
 
+<figure class="shot">
+  <img src="https://rufus.ie/pics/screenshot1_en.png" alt="Rufus 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>Rufus 메인 화면 · 출처: <a href="https://rufus.ie/en/" target="_blank" rel="noopener noreferrer">rufus.ie</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 ISO 파일을 골라 부팅 USB를 만듭니다. Windows 11 요구 사항(TPM·계정) 우회 옵션이 있습니다.

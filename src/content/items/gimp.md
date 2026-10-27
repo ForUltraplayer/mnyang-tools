@@ -7,6 +7,11 @@ category: image
 website: "https://www.gimp.org/downloads/"
 ---
 
+<figure class="shot">
+  <img src="https://www.gimp.org/release-notes/images/3.0-search-actions.png" alt="GIMP 3.0 작업 화면" loading="lazy" decoding="async" />
+  <figcaption>GIMP 3.0 작업 화면 · 출처: <a href="https://www.gimp.org/release-notes/gimp-3.0.html" target="_blank" rel="noopener noreferrer">gimp.org</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 레이어·마스크·필터 등을 제공하는 무료 오픈 소스 이미지 편집기입니다.

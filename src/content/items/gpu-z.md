@@ -7,6 +7,11 @@ category: gpu
 website: "https://www.techpowerup.com/gpuz/"
 ---
 
+<figure class="shot">
+  <img src="https://tpucdn.com/gpuz/screen1-v1792780451.gif" alt="GPU-Z 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>GPU-Z 메인 화면 · 출처: <a href="https://www.techpowerup.com/gpuz/" target="_blank" rel="noopener noreferrer">techpowerup.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 그래픽카드 상세 정보와 센서 값을 보여 줍니다. Resizable BAR 사용 여부도 나옵니다.

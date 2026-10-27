@@ -7,6 +7,11 @@ category: image
 website: "https://getartcraft.com/apps/photocraft"
 ---
 
+<figure class="shot">
+  <img src="https://getartcraft.com/images/apps/photocraft/hero.webp" alt="PhotoCraft 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>PhotoCraft 메인 화면 · 출처: <a href="https://getartcraft.com/apps/photocraft" target="_blank" rel="noopener noreferrer">getartcraft.com</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 PSD·PSB 작업과 레이어 편집을 지원하는 무료 오픈 소스 편집기입니다.

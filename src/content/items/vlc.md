@@ -7,6 +7,11 @@ category: media
 website: "https://www.videolan.org/vlc/"
 ---
 
+<figure class="shot">
+  <img src="https://images.videolan.org/vlc/screenshots/3.0.0/3.0.17-windows11-fitted.jpg" alt="VLC 재생 화면 (Windows 11)" loading="lazy" decoding="async" />
+  <figcaption>VLC 재생 화면 (Windows 11) · 출처: <a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener noreferrer">videolan.org</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 다양한 영상·음악 형식을 지원하는 무료 오픈 소스 미디어 플레이어입니다.

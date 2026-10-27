@@ -7,6 +7,11 @@ category: image
 website: "https://picpick.app/ko/download/"
 ---
 
+<figure class="shot">
+  <img src="https://picpick.app/static/landing_light-a3556e6d72146e8510f984d98510252a.png" alt="PicPick 메인 화면" loading="lazy" decoding="async" />
+  <figcaption>PicPick 메인 화면 · 출처: <a href="https://picpick.app/en/" target="_blank" rel="noopener noreferrer">picpick.app</a></figcaption>
+</figure>
+
 ## 어떤 도구인가요?
 
 화면·스크롤 캡처와 이미지 편집, 색상 추출 등을 묶은 도구입니다.
